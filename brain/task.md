@@ -1,0 +1,14 @@
+- [ ] Add backend DTOs: InterviewSummaryDto, ScoreTrendDto, TopicPerformanceDto, CandidateComparisonDto
+- [ ] Implement DashboardService with methods for history, trend, topic performance, PDF generation, and recruiter comparison
+- [ ] Add iText (or OpenPDF) dependency to pom.xml for PDF generation
+- [ ] Create DashboardController with REST endpoints
+- [ ] Update SecurityConfig to add RECRUITER role and protect recruiter endpoints
+- [ ] Write unit and integration tests for service and controller
+- [ ] Frontend: create src/pages/PerformanceDashboard.jsx with tabs for History, Score Trend, Topic Performance
+- [ ] Add Chart.js integration (install via package.json) and create charts with dark theme
+- [ ] Add InterviewPdfButton component for PDF download
+- [ ] Add src/pages/RecruiterCompare.jsx for side‑by‑side candidate comparison
+- [ ] Extend interviewService.js with new API calls (history, trend, topics, pdf, compare)
+- [ ] Update routing in App.jsx to include new routes
+- [ ] Apply Tailwind dark‑mode styling and neon‑pulse to new components
+- [ ] Manual verification: run backend, start frontend, navigate dashboard, test PDF download and recruiter view

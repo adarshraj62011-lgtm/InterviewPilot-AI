@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #0F172A;      /* slate-900 */
+  --color-dark-card: #1E293B;    /* slate-800 */
+  --color-dark-border: #334155;  /* slate-700 */
+  --color-dark-text: #F8FAFC;    /* slate-50 */
+  --color-dark-muted: #94A3B8;   /* slate-400 */
+
+  --color-primary: #6366F1;      /* Indigo-500 */
+  --color-primary-hover: #4F46E5;/* Indigo-600 */
+  --color-primary-glow: rgba(99, 102, 241, 0.2);
+
+  --color-accent-cyan: #22D3EE;
+  --color-accent-violet: #A78BFA;
+  --color-accent-emerald: #34D399;
+  --color-accent-rose: #FB7185;
+
+  --font-sans: 'Outfit', 'Inter', sans-serif;
+
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --shadow-neon-primary: 0 0 15px rgba(99, 102, 241, 0.4);
+  --shadow-neon-cyan: 0 0 15px rgba(34, 211, 238, 0.4);
+}
+
+@utility glass-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+@utility glass-panel {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+@utility focus-glow {
+  &:focus {
+    outline: none;
+    border-color: #6366F1;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.25);
+  }
+}
+
+@utility bg-grid-light {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+}
+
+@utility glass-card-light {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(99, 102, 241, 0.08);
+}
+
+
+body {
+  @apply bg-dark-bg text-dark-text antialiased font-sans;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(167, 139, 250, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(34, 211, 238, 0.08) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4F46E5;
+}
+
+/* Pulse/Glow Animation */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.6);
+  }
+}
+
+.animate-neon-pulse {
+  animation: neonPulse 3s infinite alternate;
+}
